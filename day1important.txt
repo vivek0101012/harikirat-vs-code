@@ -1,0 +1,62 @@
+java script is single threaded
+
+
+Single-Threaded Nature
+Single Threaded: JavaScript executes code in a single sequence, one operation at a time, on a single call stack. This means that it can only do one thing at a time and must finish the current task before moving on to the next one.
+
+this leads to slow running of the JavaScript;
+
+
+Thread
+A thread is the smallest unit of processing that can be scheduled by an operating system. In software, a thread is a sequence of programmed instructions that the CPU can manage independently.
+
+Single-Threaded: A single thread runs per core, meaning each core can handle one task at a time.
+Multi-Threaded: Multiple threads run per core, allowing each core to handle multiple tasks. This is often referred to as Simultaneous Multithreading (SMT), and a common implementation is Hyper-Threading Technology (HTT) by Intel.
+Relationship between Core and Thread
+Physical Cores: These are the actual hardware components capable of performing computational tasks.
+Logical Cores (Threads): With technologies like Hyper-Threading, each physical core can handle multiple threads. For example, a quad-core CPU with Hyper-Threading can handle 8 threads (2 per core).
+
+
+
+JavaScript's Single-Threaded Nature and Asynchronous Execution
+Single-Threaded Nature:
+
+1 JavaScript is single-threaded, meaning it has one main thread for executing code. This thread is responsible for running all the JavaScript code, handling events, and updating the UI.
+Blocking and Non-Blocking Operations:
+
+2 (i) Blocking Operations: These are operations that prevent the JavaScript thread from doing anything else until they complete. Examples include large computations and synchronous file reading.
+
+(ii) Non-Blocking Operations: These are operations that allow JavaScript to continue executing other code while waiting for the operation to complete. Examples  include reading from a file asynchronously or sending an HTTP request.
+
+Asynchronous Nature:
+
+ 3 To handle complex tasks without blocking the main thread, JavaScript uses an asynchronous model. This means certain tasks are delegated to the environment(refers to browser or nodejs they run the task on their threads and then gives the output of that ) (e.g., browser or Node.js) to be executed in the background, while JavaScript continues executing other code.
+Event Loop:
+
+The event loop is a fundamental part of JavaScript's asynchronous behavior. It allows the single thread to perform non-blocking operations by delegating tasks to the environment and then processing them when they are complete.
+Callbacks:
+
+Callbacks are functions passed as arguments to asynchronous operations. Once the asynchronous operation is complete, the callback is invoked to handle the result.
+
+
+
+javascript is lossely typed since its not strict on  syntaxa
+Dynamic Typing: Variables can hold any type of value without strict declarations.
+
+Type Flexibility: Types can change during execution, allowing for versatile coding.
+
+Type Coercion: Automatically converts values between types, which can simplify operations but requires careful handling.
+
+Varied Data Types: Supports both primitive types (like numbers, strings, booleans) and complex types (objects, arrays, functions) within the same variable.
+
+Runtime Type Checking: Uses typeof and instanceof for checking types dynamically during program execution.
+
+
+
+js is interpreted :: 
+Interpreted Execution: JavaScript code is executed line by line at runtime by an interpreter without a separate compilation step.
+
+Platform Independence: JavaScript runs on any platform with a compatible interpreter, such as web browsers and Node.js runtime environments.
+
+how its good
+even if there are some errors the website will run it wont break
